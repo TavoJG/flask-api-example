@@ -35,7 +35,11 @@ This project can be run both locally and using Docker. The easiest way to run it
 #### Instructions
 
 1. Create a .env file and configure env variables (use [example.env](./example.env) as placeholder)
-2. Run `docker compose up -d`, service should start automatically
+2. Run `docker compose up -d`, service should start automatically at `http://localhost:8080`
+
+## Running tests
+
+This project uses pytest for automated testing. For run all test, just type `pytest`
 
 ## Usage
 
@@ -91,3 +95,12 @@ If the API key is valid and stock symbol exists, endpoint will response with las
 ## Continuous Integration
 
 This project has a CI pipeline built with GitHub actions. A Docker image is built and saved into Dockerhub when a PR is merged into main branch. Image name is `tavojg54/flask-test-api`.
+
+## Deployment
+
+This project runs inside GCP, into a Cloud Run instance. Terraform files can be consulted inside [terraform](./terraform/) folder.
+
+### Logging
+
+Logs are managed by GCP Logging.
+![Gcp Logs](./docs/gcp_logs.png)
